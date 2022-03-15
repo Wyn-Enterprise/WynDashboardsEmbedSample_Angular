@@ -1,0 +1,59 @@
+import { Component, Input, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'sign-in',
+  templateUrl: './sign-in.component.html',
+  styleUrls: ['./sign-in.component.css']
+})
+export class SignInComponent implements OnInit {
+
+  serverUrl: string;
+  username: string;
+  password: string;
+  error: string;
+
+  @Input() handleSubmitCallbackFunction: (url: string, token: string, username: string) => void;
+
+  constructor() { }
+
+  ngOnInit(): void {
+    this.serverUrl = "http://localhost:51980";
+    this.username = "";
+  }
+
+  async onSubmit() {
+
+    var token = '';
+    var re = /\/$/;
+    var baseUrl = this.serverUrl.replace(re, "");
+
+    var urlencoded = new URLSearchParams();
+    urlencoded.append("grant_type", "password");
+    urlencoded.append("username", this.username);
+    urlencoded.append("password", this.password);
+    urlencoded.append("client_id", "integration");
+    urlencoded.append("client_secret", "eunGKas3Pqd6FMwx9eUpdS7xmz");
+
+
+    const response = await fetch(baseUrl + "/connect/token", {
+      method: 'POST', // *GET, POST, PUT, DELETE, etc.
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      redirect: 'follow', // manual, *follow, error
+      body: urlencoded // body data type must match "Content-Type" header
+    });
+
+    await response.json().then(res => {
+      token = res.access_token;
+      if (token) {
+        this.handleSubmitCallbackFunction(this.serverUrl, token, this.username);
+      } else {
+        this.error = "Authorization error";
+      }
+    }).catch(err => {
+      this.error = "Authorization error";
+    });
+  }
+}

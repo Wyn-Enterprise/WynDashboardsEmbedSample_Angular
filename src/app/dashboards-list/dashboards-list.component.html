@@ -1,0 +1,6 @@
+<div class="dashboardsList">  
+  <div *ngFor="let dbd of dashboardsList" class="listItem" (click)="onClick(dbd)">
+    <img [src]="getIconSrc(dbd)" alt="dbd.name" />
+    <h3 title="dbd.title">{{dbd.name}}</h3>
+  </div>
+</div>

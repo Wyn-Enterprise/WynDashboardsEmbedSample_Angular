@@ -1,0 +1,26 @@
+<div *ngIf="token==''">
+  <sign-in [handleSubmitCallbackFunction]="handleSubmit"></sign-in>
+</div>
+<div id="app-root" class="app" *ngIf="token!=''">
+  <div class="app-sidebar">
+    <div class="app-sidebar-header">
+      <div class="app-sidebar-header-group">
+        <div id="app-portal-url">{{serverUrl}}</div>
+      </div>
+      <div class="app-sidebar-header-group app-user-info">
+        <div>
+          <div id="app-username">{{username}}</div>
+        </div>
+        <button id="app-logout-button" class="app-sidebar-btn app-logout-button" (click)="handleLogout()">Log Out</button>
+      </div>
+      <div class="app-sidebar-header-group">
+        <button id="app-create-dashboard" class="app-sidebar-btn app-create-report-btn" type="button" (click)="createNewDashboard()">Create New Dashboard</button>
+        <button id="app-open-dashboard-designer" class="app-sidebar-btn app-create-report-btn" type="button" (click)="openDashboardInDesigner()">Design Selected Dashboard</button>
+      </div>
+    </div>
+    <div class="app-sidebar-content">
+      <dashboards-list [dashboardSelectedCallbackFn]="dashboardSelected" [token]="token" [serverUrl]="serverUrl" [dashboardsList]="dashboardsList"></dashboards-list>
+    </div>
+  </div>
+  <div style="flex: 1;" id='wyn-root'></div>
+</div>
