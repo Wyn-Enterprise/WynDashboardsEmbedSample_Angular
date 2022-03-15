@@ -1,4 +1,4 @@
-# WynDashboardsEmbeddedSample_Angular
+# WynDashboardsEmbedSample_Angular
 
 This sample demonstrates the use of Wyn Dashboard Designer & Viewer connected to the Wyn portal.
 
@@ -14,7 +14,7 @@ This sample requires:
 
 ### Steps
 
-1. Open cmd.exe and go to the root directory WynDashboardsEmbeddedSample_Angular
+1. Open cmd.exe and go to the root directory WynDashboardsEmbedSample_Angular
 2. Enter `npm install`
 3. Enter `npm update @grapecity/wyn-integration --latest`
 5. Enter `ng serve --open`
