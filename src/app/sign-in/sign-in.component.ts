@@ -18,7 +18,6 @@ export class SignInComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(Config);
     this.serverUrl = Config.serverUrl;
     this.username = Config.username;
   }
