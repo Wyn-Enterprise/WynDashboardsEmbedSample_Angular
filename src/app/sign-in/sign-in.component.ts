@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import Config from '../../assets/config.json';
 
 @Component({
   selector: 'sign-in',
@@ -17,8 +18,9 @@ export class SignInComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.serverUrl = "http://localhost:51980";
-    this.username = "";
+    console.log(Config);
+    this.serverUrl = Config.serverUrl;
+    this.username = Config.username;
   }
 
   async onSubmit() {
