@@ -17,6 +17,7 @@ This sample requires:
 1. Open cmd.exe and go to the root directory WynDashboardsEmbedSample_Angular
 2. Enter `npm install`
 3. Enter `npm update @grapecity/wyn-integration --latest`
+4. Open config.json under the src/assets folder and enter the Wyn Server url and Username to pre-fill the input boxes on application load
 5. Enter `ng serve --open`
 6. Open http://localhost:4200 in browser
 
