@@ -1,6 +1,6 @@
 # WynDashboardsEmbedSample_Angular
 
-This sample demonstrates the use of Wyn Dashboard Designer & Viewer connected to the Wyn portal.
+This sample demonstrates the use of Wyn Dashboard Designer & Viewer connected to the Wyn portal in an Angular app
 
 ## System requirements
 
