@@ -1,11 +1,12 @@
 import { Component, ChangeDetectorRef, OnInit } from '@angular/core';
 import { getDashboardList } from './library';
-import { WynIntegration } from '@grapecity/wyn-integration';
+import { WynIntegration } from '@wynenterprise/wyn-integration';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  standalone: false
 })
 export class AppComponent implements OnInit {
   loading = false;
@@ -30,7 +31,7 @@ export class AppComponent implements OnInit {
     this.serverUrl = serverUrl.replace(re, "");
     this.token = token;
     this.username = username;
-    this.dashboardsList = await getDashboardList(this.serverUrl, this.token);    
+    this.dashboardsList = await getDashboardList(this.serverUrl, this.token);
   }
 
   handleLogout = () => {
@@ -42,7 +43,7 @@ export class AppComponent implements OnInit {
 
   dashboardSelected = (dashboardID, docTitle) => {
     this.dashboardID = dashboardID;
-    this.docTitle = docTitle;   
+    this.docTitle = docTitle;
     this.ins?.destroy?.();
     this.createViewer();
   }
@@ -64,11 +65,11 @@ export class AppComponent implements OnInit {
   createNewDashboard = () => {
     this.ins?.destroy?.();
     this.dashboardID = '';
-    this.createDesigner();    
+    this.createDesigner();
   }
 
   openDashboardInDesigner = () => {
-    this.ins?.destroy?.();  
+    this.ins?.destroy?.();
     this.createDesigner();
   }
 

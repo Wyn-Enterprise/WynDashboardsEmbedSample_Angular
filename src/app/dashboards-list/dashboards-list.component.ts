@@ -3,7 +3,8 @@ import { Component, OnInit, Input } from '@angular/core';
 @Component({
   selector: 'dashboards-list',
   templateUrl: './dashboards-list.component.html',
-  styleUrls: ['./dashboards-list.component.css']
+  styleUrls: ['./dashboards-list.component.css'],
+  standalone: false
 })
 export class DashboardsListComponent implements OnInit {
 
@@ -18,8 +19,8 @@ export class DashboardsListComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {    
-    
+  ngOnInit(): void {
+
   }
 
   onClick = (dashboard: any) => {
