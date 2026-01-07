@@ -102,5 +102,8 @@
       }
     }
   },
-  "defaultProject": "WynDashboardsEmbeddedSample"
+  "defaultProject": "WynDashboardsEmbeddedSample",
+  "cli": {
+    "analytics": false
+  }
 }
