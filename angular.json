@@ -29,7 +29,10 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "allowedCommonJsDependencies": [
+              "@wynenterprise/wyn-integration"
+            ]
           },
           "configurations": {
             "production": {
@@ -41,7 +44,7 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
+                  "maximumWarning": "6kb",
                   "maximumError": "4kb"
                 }
               ],
@@ -66,12 +69,15 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "port": 3000
+          },
           "configurations": {
             "production": {
-              "browserTarget": "WynDashboardsEmbeddedSample:build:production"
+              "buildTarget": "WynDashboardsEmbeddedSample:build:production"
             },
             "development": {
-              "browserTarget": "WynDashboardsEmbeddedSample:build:development"
+              "buildTarget": "WynDashboardsEmbeddedSample:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +85,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "WynDashboardsEmbeddedSample:build"
+            "buildTarget": "WynDashboardsEmbeddedSample:build"
           }
         },
         "test": {
@@ -102,5 +108,7 @@
       }
     }
   },
-  "defaultProject": "WynDashboardsEmbeddedSample"
+  "cli": {
+    "analytics": false
+  }
 }
