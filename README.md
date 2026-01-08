@@ -6,7 +6,7 @@ This sample demonstrates the use of Wyn Dashboard Designer & Viewer connected to
 
 This sample requires:
  * [Node.js](https://nodejs.org/en/download/) 10.14.0 or newer
- * [Wyn Enterprise](https://wyn.grapecity.com/demos/request/trial) 5.0.00236.0 or newer
+ * [Wyn Enterprise](https://www.wynenterprise.com/try-wyn-for-free/wyn-evaluation-options/) 5.0.00236.0 or newer
 
 ### Wyn Enterprise System Configurations for API usage
 1. In the Administrator Portal after installing Wyn Enterprise, open the System Configuration Page. 
